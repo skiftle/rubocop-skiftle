@@ -1,0 +1,187 @@
+plugins:
+  - rubocop-canon
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  NewCops: disable
+  TargetRubyVersion: 3.2
+  SuggestExtensions: false
+
+# Canon cops — Skiftle defaults
+Canon/KeywordShorthand:
+  Enabled: true
+
+Canon/SortHash:
+  Enabled: true
+  ShorthandsFirst: true
+  ExcludeMethods:
+    - enum
+
+Canon/SortKeywords:
+  Enabled: true
+  ShorthandsFirst: true
+  Methods:
+    - attribute
+    - belongs_to
+    - field
+    - has_many
+    - has_one
+    - param
+    - type
+    - union
+    - variant
+
+Canon/SortMethodArguments:
+  Enabled: true
+  Methods:
+    - attr_accessor
+    - attr_reader
+    - attr_writer
+    - delegate
+
+Canon/SortMethodDefinition:
+  Enabled: true
+
+# Layout
+Layout/LineLength:
+  Max: 150
+  AllowedPatterns:
+    - '^\s*#'
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineMethodArgumentLineBreaks:
+  Enabled: true
+
+Layout/MultilineMethodParameterLineBreaks:
+  Enabled: true
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Layout/FirstMethodParameterLineBreak:
+  Enabled: true
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+
+# Style
+Style/KeywordParametersOrder:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/EmptyElse:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+# Metrics — disabled
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+# Naming
+Naming/VariableNumber:
+  Enabled: false
+
+Naming/PredicatePrefix:
+  Enabled: false
+
+# Lint
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Lint/IneffectiveAccessModifier:
+  Enabled: false
+
+Lint/DuplicateMethods:
+  Enabled: false
+
+# RSpec
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/IndexedLet:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+RSpec/RepeatedDescription:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/LeakyConstantDeclaration:
+  Enabled: false
+
+RSpec/RemoveConst:
+  Enabled: false
+
+RSpec/BeforeAfterAll:
+  Enabled: false
+
+RSpec/SpecFilePathFormat:
+  Enabled: false

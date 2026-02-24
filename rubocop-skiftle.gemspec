@@ -13,8 +13,12 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rubocop', '>= 1.75.0', '< 2.0'
   s.add_dependency 'rubocop-canon', '~> 0.1'
+  s.add_dependency 'rubocop-performance', '>= 1.0', '< 2.0'
+  s.add_dependency 'rubocop-rails', '>= 2.0', '< 3.0'
+  s.add_dependency 'rubocop-rake', '>= 0.6', '< 1.0'
+  s.add_dependency 'rubocop-rspec', '>= 3.0', '< 4.0'
 
-  s.files = Dir['lib/**/*', 'rubocop-gem.yml', 'rubocop-app.yml', 'LICENSE.txt', 'README.md']
+  s.files = Dir['lib/**/*', 'rubocop-base.yml', 'rubocop-gem.yml', 'rubocop-app.yml', 'LICENSE.txt', 'README.md']
   s.metadata = {
     'homepage_uri' => s.homepage,
     'rubygems_mfa_required' => 'true',

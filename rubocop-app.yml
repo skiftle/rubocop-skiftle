@@ -1,6 +1,16 @@
-inherit_from: rubocop-gem.yml
+inherit_from: rubocop-base.yml
 
-# Rails
+plugins:
+  - rubocop-rails
+
+AllCops:
+  Exclude:
+    - "**/bin/**/*"
+    - "**/db/**/*"
+    - "**/log/**/*"
+    - "**/tmp/**/*"
+    - "**/vendor/**/*"
+
 Rails/Delegate:
   Enabled: false
 

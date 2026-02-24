@@ -13,8 +13,35 @@ jobs:
     name: Validate YAML
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-      - run: ruby -ryaml -e "YAML.safe_load_file('rubocop-gem.yml'); YAML.safe_load_file('rubocop-app.yml'); puts 'Valid'"
+      - run: ruby -ryaml -e "YAML.safe_load_file('rubocop-base.yml'); YAML.safe_load_file('rubocop-gem.yml'); YAML.safe_load_file('rubocop-app.yml'); puts 'Valid'"
+  smoke:
+    name: Smoke test (${{ matrix.preset }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        preset: [rubocop-gem.yml, rubocop-app.yml]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - run: |
+          mkdir -p tmp/smoke
+          echo '# frozen_string_literal: true' > tmp/smoke/test.rb
+          echo "inherit_from: ../../${{ matrix.preset }}" > tmp/smoke/.rubocop.yml
+          cd tmp/smoke && bundle exec rubocop --config .rubocop.yml test.rb
+  all-green:
+    name: All checks passing
+    if: always()
+    needs: [validate, smoke]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          [[ "${{ needs.validate.result }}" == "success" ]] || exit 1
+          [[ "${{ needs.smoke.result }}" == "success" ]] || exit 1

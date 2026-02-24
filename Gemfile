@@ -4,4 +4,4 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rubocop-canon', path: '../rubocop-canon'
+gem 'rubocop-canon', '~> 0.1', path: '../rubocop-canon'

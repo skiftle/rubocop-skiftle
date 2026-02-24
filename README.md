@@ -7,7 +7,9 @@ Skiftle's shared RuboCop configuration. Includes [rubocop-canon](https://github.
 | Preset | Use for | Includes |
 |--------|---------|----------|
 | `rubocop-gem.yml` | Ruby gems | Canon cops, Layout, Style, Metrics, Naming, Lint, RSpec |
-| `rubocop-app.yml` | Rails apps | Everything in gem + Rails overrides |
+| `rubocop-app.yml` | Rails apps | Everything in gem + Rails overrides + standard excludes |
+
+Both presets inherit from `rubocop-base.yml` which contains all shared rules.
 
 ## Installation
 
@@ -23,9 +25,6 @@ For a gem:
 # .rubocop.yml
 inherit_gem:
   rubocop-skiftle: rubocop-gem.yml
-
-plugins:
-  - rubocop-canon
 ```
 
 For a Rails app:
@@ -34,12 +33,6 @@ For a Rails app:
 # .rubocop.yml
 inherit_gem:
   rubocop-skiftle: rubocop-app.yml
-
-plugins:
-  - rubocop-canon
-  - rubocop-rails
-  - rubocop-rspec
-  - rubocop-performance
 ```
 
 ## License
