@@ -24,6 +24,6 @@ Gem::Specification.new do |s|
   s.metadata = {
     'homepage_uri' => s.homepage,
     'rubygems_mfa_required' => 'true',
-    'source_code_uri' => 'https://github.com/skiftle/rubocop-skiftle',
+    'source_code_uri' => 'https://github.com/skiftle/rubocop-skiftle'
   }
 end
