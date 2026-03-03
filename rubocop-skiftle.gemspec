@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.license  = 'MIT'
   s.required_ruby_version = '>= 3.2'
 
-  s.add_development_dependency 'lefthook', '~> 1.0'
+  s.add_development_dependency 'lefthook', '~> 2.1'
 
   s.add_dependency 'rubocop', '>= 1.75.0', '< 2.0'
   s.add_dependency 'rubocop-canon', '~> 0.1'
