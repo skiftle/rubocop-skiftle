@@ -18,8 +18,18 @@ Canon/DeclarationGroups:
   GroupedMethods:
     - [belongs_to, has_and_belongs_to_many, has_many, has_one]
     - [validate, validates]
-    - [after_commit, after_create, after_create_commit, after_destroy, after_save,
-       after_update, after_update_commit, before_create, before_save, before_validation]
+    - [
+        after_commit,
+        after_create,
+        after_create_commit,
+        after_destroy,
+        after_save,
+        after_update,
+        after_update_commit,
+        before_create,
+        before_save,
+        before_validation,
+      ]
 
 Canon/MethodBodyBlankLines:
   inherit_mode:

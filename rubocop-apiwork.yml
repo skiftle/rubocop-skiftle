@@ -3,7 +3,48 @@ Canon/DeclarationGroups:
     merge:
       - GroupedMethods
   GroupedMethods:
-    - [array, boolean, number, object, reference, string, union]
+    - [
+        array,
+        array?,
+        binary,
+        binary?,
+        boolean,
+        boolean?,
+        date,
+        date?,
+        datetime,
+        datetime?,
+        decimal,
+        decimal?,
+        integer,
+        integer?,
+        literal,
+        number,
+        number?,
+        object,
+        object?,
+        record,
+        record?,
+        reference,
+        reference?,
+        string,
+        string?,
+        time,
+        time?,
+        union,
+        union?,
+        unknown,
+        unknown?,
+        uuid,
+        uuid?,
+      ]
+    - [
+        deprecated!,
+        description,
+        operation_id,
+        summary,
+        tags,
+      ]
 
 Canon/MethodBodyBlankLines:
   inherit_mode:
