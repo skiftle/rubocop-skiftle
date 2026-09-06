@@ -6,11 +6,21 @@ This project uses [Conventional Commits](https://www.conventionalcommits.org) fo
 
 | Prefix | Version bump | Example |
 |--------|-------------|---------|
-| `fix:` | Patch (0.1.0 → 0.1.1) | `fix: disable RSpec/SomeNewCop` |
-| `feat:` | Minor (0.1.0 → 0.2.0) | `feat: add Capybara preset` |
-| `feat!:` | Major (0.1.0 → 1.0.0) | `feat!: require Ruby 3.3` |
+| `fix:` | Patch (0.1.1 → 0.1.2) | `fix: disable RSpec/SomeNewCop` |
+| `feat:` | Patch (0.1.1 → 0.1.2) | `feat: add Capybara preset` |
+| `feat!:` | Minor (0.1.1 → 0.2.0) | `feat!: enable Layout/SomeCop` |
 | `chore:` | No release | `chore: update CI` |
 | `docs:` | No release | `docs: fix README typo` |
+
+Below 1.0 the minor digit counts breaking changes: `0.x.0` breaks something, `0.x.y` is safe to
+take. Once the gem reaches 1.0 the usual mapping applies and `feat:` bumps the minor.
+
+## Breaking changes
+
+A commit that enables a cop or tightens a rule is `feat!:`. Nothing in the API changes, but every
+consumer's build turns red on upgrade, which is what a breaking change means here.
+
+Loosening a rule or disabling a cop is `fix:`.
 
 ## Releases
 
