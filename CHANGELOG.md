@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/skiftle/rubocop-skiftle/compare/rubocop-skiftle/v0.2.0...rubocop-skiftle/v0.2.1) (2026-09-06)
+
+
+### Bug Fixes
+
+* group every apiwork field type and action keyword ([fc24a27](https://github.com/skiftle/rubocop-skiftle/commit/fc24a275217e063730418481410c5690517ff54a))
+
 ## [0.2.0](https://github.com/skiftle/rubocop-skiftle/compare/rubocop-skiftle/v0.1.1...rubocop-skiftle/v0.2.0) (2026-09-06)
 
 
