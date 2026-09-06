@@ -1,0 +1,14 @@
+Canon/DeclarationGroups:
+  inherit_mode:
+    merge:
+      - GroupedMethods
+  GroupedMethods:
+    - [array, boolean, number, object, reference, string, union]
+
+Canon/MethodBodyBlankLines:
+  inherit_mode:
+    merge:
+      - SeparatedMethods
+  SeparatedMethods:
+    - expose
+    - expose_error
