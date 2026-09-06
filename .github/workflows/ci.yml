@@ -17,14 +17,17 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-      - run: ruby -ryaml -e "YAML.safe_load_file('rubocop-base.yml'); YAML.safe_load_file('rubocop-gem.yml'); YAML.safe_load_file('rubocop-app.yml'); puts 'Valid'"
+      - run: ruby -ryaml -e "Dir['rubocop-*.yml'].each { |file| YAML.safe_load_file(file) }; puts 'Valid'"
   smoke:
     name: Smoke test (${{ matrix.preset }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        preset: [rubocop-gem.yml, rubocop-app.yml]
+        preset:
+          - rubocop-gem.yml
+          - rubocop-app.yml
+          - rubocop-app.yml rubocop-apiwork.yml
     steps:
       - uses: actions/checkout@v7
       - uses: ruby/setup-ruby@v1
@@ -34,7 +37,8 @@ jobs:
       - run: |
           mkdir -p tmp/smoke
           echo '# frozen_string_literal: true' > tmp/smoke/test.rb
-          echo "inherit_from: ../../${{ matrix.preset }}" > tmp/smoke/.rubocop.yml
+          echo "inherit_from:" > tmp/smoke/.rubocop.yml
+          for file in ${{ matrix.preset }}; do echo "  - ../../$file" >> tmp/smoke/.rubocop.yml; done
           cd tmp/smoke && bundle exec rubocop --config .rubocop.yml test.rb
   all-green:
     name: All checks passing
