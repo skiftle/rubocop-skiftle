@@ -9,8 +9,28 @@ AllCops:
   SuggestExtensions: false
 
 # Canon cops — Skiftle defaults
+Canon/BlockPhases:
+  Enabled: true
+  Blocks:
+    - it
+    - specify
+  TrailingMethods:
+    - expect
+    - expect_any_instance_of
+    - is_expected
+
+Canon/DeclarationGroups:
+  Enabled: true
+  GroupedMethods:
+    - [attr_accessor, attr_reader, attr_writer]
+
 Canon/KeywordShorthand:
   Enabled: true
+
+Canon/MethodBodyBlankLines:
+  Enabled: true
+  SeparatedMethods:
+    - errors.add
 
 Canon/SortHash:
   Enabled: true
@@ -44,6 +64,9 @@ Canon/SortMethodDefinition:
   Enabled: true
 
 # Layout
+Layout/EmptyLinesAfterModuleInclusion:
+  Enabled: true
+
 Layout/LineLength:
   Max: 150
   AllowedPatterns:
