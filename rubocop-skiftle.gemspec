@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'lefthook', '~> 2.1'
 
   s.add_dependency 'rubocop', '>= 1.75.0', '< 2.0'
-  s.add_dependency 'rubocop-canon', '~> 0.1'
+  s.add_dependency 'rubocop-canon', '~> 0.2'
   s.add_dependency 'rubocop-performance', '>= 1.0', '< 2.0'
   s.add_dependency 'rubocop-rails', '>= 2.0', '< 3.0'
   s.add_dependency 'rubocop-rake', '>= 0.6', '< 1.0'
