@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.0](https://github.com/skiftle/rubocop-skiftle/compare/rubocop-skiftle/v0.2.1...rubocop-skiftle/v0.3.0) (2026-09-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* group every Active Record callback
+
+### Features
+
+* group every Active Record callback ([1558fec](https://github.com/skiftle/rubocop-skiftle/commit/1558fec165d5ecdccaf82ec8250f6b6f9c415e4a))
+
 ## [0.2.1](https://github.com/skiftle/rubocop-skiftle/compare/rubocop-skiftle/v0.2.0...rubocop-skiftle/v0.2.1) (2026-09-06)
 
 
